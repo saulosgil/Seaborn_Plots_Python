@@ -845,7 +845,7 @@ plt.show()
 
 9. [Heatmaps](https://seaborn.pydata.org/generated/seaborn.heatmap.html)
 
-   10.[ Scatter Plots](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
+10.[ Scatter Plots](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
 
 ## References
 
