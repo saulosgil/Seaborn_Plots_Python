@@ -173,7 +173,6 @@ plt.ylabel('Average')
 plt.show()
 ```
 
-![png](output_10_1.png)
 ![png](images/output_10_1.png)
 
 - Proportional Representation through Stacked Bar Charts
@@ -232,7 +231,7 @@ plt.legend(loc='upper right')
 plt.show()
 ```
 
-![png](output_13_0.png)
+![png](images/output_13_0.png)
 
 - Comparison of Subcategories within each category through Clustered Bar Plots
 
@@ -245,7 +244,7 @@ plt.ylabel('Average Age')
 plt.show()
 ```
 
-![png](output_15_1.png)
+![png](images/output_15_1.png)
 
 # 2) Count plots
 
@@ -262,7 +261,7 @@ plt.title('Simple Countplot')
 plt.show()
 ```
 
-![png](output_19_1.png)
+![png](images/output_19_1.png)
 
 - Relationship between different categorical variables
 
@@ -273,7 +272,7 @@ plt.title('Clustered Countplot')
 plt.show()
 ```
 
-![png](output_21_1.png)
+![png](images/output_21_1.png)
 
 # 3) Histograms
 
@@ -352,7 +351,7 @@ plt.title('Histogram with KDE')
 plt.show()
 ```
 
-![png](output_26_0.png)
+![png](images/output_26_0.png)
 
 - Compare the distribution of many continuous variables
 
@@ -363,7 +362,7 @@ plt.title('Multi-Column Histogram')
 plt.show()
 ```
 
-![png](output_28_1.png)
+![png](images/output_28_1.png)
 
 - Compare the distribution of a continuous variable for different categories
 
@@ -373,7 +372,7 @@ plt.title('Stacked Histogram')
 plt.show()
 ```
 
-![png](output_30_1.png)
+![png](images/output_30_1.png)
 
 # 4) Cat Plots (Box, Violin, Swarm, Boxen)
 
@@ -462,7 +461,7 @@ plt.title('Boxplot')
 plt.show()
 ```
 
-![png](output_35_1.png)
+![png](images/output_35_1.png)
 
 - Violin plot
 
@@ -473,7 +472,7 @@ plt.title('Violinplot')
 plt.show()
 ```
 
-![png](output_37_1.png)
+![png](images/output_37_1.png)
 
 - Swarm plot
 
@@ -483,7 +482,7 @@ plt.title('SwarmPlot')
 plt.show()
 ```
 
-![png](output_39_0.png)
+![png](images/output_39_0.png)
 
 - StripPlot
 
@@ -494,7 +493,7 @@ plt.title('StripPlot')
 plt.show()
 ```
 
-![png](output_41_1.png)
+![png](images/output_41_1.png)
 
 # 5) Multiple Plots using FacetGrid
 
@@ -582,7 +581,7 @@ g.set_titles(col_template="Pulse rate for {col_name}")
 
 ```
 
-![png](output_46_2.png)
+![png](images/output_46_2.png)
 
 - Scatter plots for flipper length and body mass of Penguins from different islands
 
@@ -670,7 +669,7 @@ g.set_titles(template="Penguins of {col_name} Island")
 g.add_legend()
 ```
 
-![png](output_50_1.png)
+![png](images/output_50_1.png)
 
 # 6) Joint Plots
 
@@ -687,7 +686,7 @@ Let's use mpg dataset to see some examples.
 sns.jointplot(x="mpg", y="displacement", data=mpg, height=5, kind='hex', ratio=2, marginal_ticks=True)
 ```
 
-![png](output_54_1.png)
+![png](images/output_54_1.png)
 
 - Comparison of acceleration and horsepower for cars from different countries
 
@@ -696,7 +695,7 @@ sns.jointplot(x="mpg", y="displacement", data=mpg, height=5, kind='hex', ratio=2
 sns.jointplot(x="horsepower", y="acceleration", data=mpg, hue="origin", height=5, ratio=2, marginal_ticks=True)
 ```
 
-![png](output_56_2.png)
+![png](images/output_56_2.png)
 
 # 7) KDE Plots
 
@@ -714,7 +713,7 @@ plt.title('Overlapping KDE Plot')
 plt.show()
 ```
 
-![png](output_60_1.png)
+![png](images/output_60_1.png)
 
 - Comparing the weight of cars across different countries
 
@@ -725,7 +724,7 @@ plt.title('Stacked KDE Plot')
 plt.show()
 ```
 
-![png](output_62_1.png)
+![png](images/output_62_1.png)
 
 # 8) Pairplots
 
@@ -740,14 +739,14 @@ Along the diagonal, histograms or density plots for each variable illustrate the
 sns.pairplot(data=penguins, corner=True)
 ```
 
-![png](output_66_1.png)
+![png](images/output_66_1.png)
 
 ```python
 # Pairplot with hues
 sns.pairplot(data=penguins, hue='species')
 ```
 
-![png](output_67_2.png)
+![png](images/output_67_2.png)
 
 # 9) Heatmaps
 
@@ -767,7 +766,7 @@ plt.title('Heatmap of Correlation matrix')
 plt.show()
 ```
 
-![png](output_70_0.png)
+![png](images/output_70_0.png)
 
 # 10) Scatter Plots
 
@@ -794,7 +793,7 @@ plt.title('Simple Scatterplot')
 plt.show()
 ```
 
-![png](output_73_0.png)
+![png](images/output_73_0.png)
 
 ```python
 # Scatterplot with Hue
@@ -804,7 +803,7 @@ plt.title('Scatterplot with Hue')
 plt.show()
 ```
 
-![png](output_74_0.png)
+![png](images/output_74_0.png)
 
 ```python
 # Scatterplot with Hue and Markers
@@ -814,7 +813,7 @@ plt.title('Scatterplot with Hue and Markers')
 plt.show()
 ```
 
-![png](output_75_0.png)
+![png](images/output_75_0.png)
 
 ```python
 # Scatterplot with Hue & Size
@@ -824,7 +823,7 @@ plt.title('Scatterplot with Hue & Size')
 plt.show()
 ```
 
-![png](output_76_0.png)
+![png](images/output_76_0.png)
 
 # More details can be seen in the links below:
 
