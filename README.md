@@ -1,6 +1,7 @@
 # Commonly plots using Seaborn from Python
 
 This script shows 10 commonly plots using Seaborn library from Python.
+
 1. Bar Plots
 2. Count Plots
 3. Histograms
@@ -14,7 +15,6 @@ This script shows 10 commonly plots using Seaborn library from Python.
 
 - Libraries
 
-
 ```python
 import pandas as pd
 import numpy as np
@@ -26,7 +26,6 @@ import matplotlib.pyplot as plt
 ```
 
 - Import datasets
-
 
 ```python
 exercise = sns.load_dataset('exercise')
@@ -43,33 +42,10 @@ Bar plots offer a means to visually represent diverse data sets, including count
 
 They prove especially valuable for illustrating and contrasting data across various categories.
 
-
-
-
-
-
-
 ```python
 titanic.head(5)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -186,10 +162,7 @@ titanic.head(5)
 </table>
 </div>
 
-
-
 - Categorical comparison
-
 
 ```python
 # Simple bar plot
@@ -200,27 +173,9 @@ plt.ylabel('Average')
 plt.show()
 ```
 
-    C:\Users\saulo\AppData\Local\Temp\ipykernel_3664\439085132.py:2: FutureWarning: 
-    
-    Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
-    
-      sns.barplot(data=titanic, x='who', y='age', estimator='mean', errorbar=None, palette='viridis')
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_10_1.png)
-    
-
 
 - Proportional Representation through Stacked Bar Charts
-
 
 ```python
 # prepare dataset - groupby
@@ -230,23 +185,6 @@ data.sort_values('total', inplace=True)
 
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -279,31 +217,23 @@ data.sort_values('total', inplace=True)
 </table>
 </div>
 
-
-
-
 ```python
 # Barplot Showing Part of Total
 sns.set_color_codes("pastel")
 sns.barplot(x="total", y="embark_town", data=data,
-            label="Female", color="b")  
+            label="Female", color="b")
 sns.set_color_codes("muted")
 sns.barplot(x="male", y="embark_town", data=data,
-            label="Male", color="b")  
+            label="Male", color="b")
 plt.title('Barplot Showing Part of Total')
 plt.xlabel('Number of Persons')
 plt.legend(loc='upper right')
 plt.show()
 ```
 
-
-    
 ![png](output_13_0.png)
-    
-
 
 - Comparison of Subcategories within each category through Clustered Bar Plots
-
 
 ```python
 # Clustered barplot
@@ -314,17 +244,7 @@ plt.ylabel('Average Age')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_15_1.png)
-    
-
 
 # 2) Count plots
 
@@ -334,7 +254,6 @@ On the x-axis lie the variable's categories, while the y-axis displays the count
 
 - Frequency Distribution of categorical variables
 
-
 ```python
 # Simple Countplot
 sns.countplot(data=titanic, x='alive', palette='viridis')
@@ -342,25 +261,9 @@ plt.title('Simple Countplot')
 plt.show()
 ```
 
-    C:\Users\saulo\AppData\Local\Temp\ipykernel_3664\1076042103.py:2: FutureWarning: 
-    
-    Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
-    
-      sns.countplot(data=titanic, x='alive', palette='viridis')
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_19_1.png)
-    
-
 
 - Relationship between different categorical variables
-
 
 ```python
 # Clustered Countplot
@@ -369,17 +272,7 @@ plt.title('Clustered Countplot')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_21_1.png)
-    
-
 
 # 3) Histograms
 
@@ -389,28 +282,10 @@ They showcase the frequency or count of observations across various intervals or
 
 Let's use iris dataset.
 
-
 ```python
 iris.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -467,10 +342,7 @@ iris.head()
 </table>
 </div>
 
-
-
 - Visualize the shape, centre, range and spread of a continuous/numeric variable and to identify any patterns or outliers
-
 
 ```python
 # Histogram with KDE
@@ -479,14 +351,9 @@ plt.title('Histogram with KDE')
 plt.show()
 ```
 
-
-    
 ![png](output_26_0.png)
-    
 
-
--  Compare the distribution of many continuous variables
-
+- Compare the distribution of many continuous variables
 
 ```python
 # Histogram with multiple features
@@ -495,22 +362,9 @@ plt.title('Multi-Column Histogram')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_28_1.png)
-    
-
 
 - Compare the distribution of a continuous variable for different categories
-
 
 ```python
 sns.histplot(iris, x='sepal_length', hue='species', multiple='stack', linewidth=0.5)
@@ -518,53 +372,18 @@ plt.title('Stacked Histogram')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_30_1.png)
-    
-
 
 # 4) Cat Plots (Box, Violin, Swarm, Boxen)
-
 
 Catplot is a flexible higher-level function that integrates various categorical seaborn plots including boxplots, violinplots, swarmplots, pointplots, barplots, and countplots.
 
 Now, let's use tips dataset.
 
-
 ```python
 tips.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -633,10 +452,7 @@ tips.head()
 </table>
 </div>
 
-
-
 - Boxplot
-
 
 ```python
 # Boxplot
@@ -645,24 +461,9 @@ plt.title('Boxplot')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\categorical.py:640: FutureWarning: SeriesGroupBy.grouper is deprecated and will be removed in a future version of pandas.
-      positions = grouped.grouper.result_index.to_numpy(dtype=float)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\categorical.py:640: FutureWarning: SeriesGroupBy.grouper is deprecated and will be removed in a future version of pandas.
-      positions = grouped.grouper.result_index.to_numpy(dtype=float)
-    
-
-
-    
 ![png](output_35_1.png)
-    
-
 
 - Violin plot
-
 
 ```python
 # Violinplot
@@ -671,21 +472,9 @@ plt.title('Violinplot')
 plt.show()
 ```
 
-    C:\Users\saulo\AppData\Local\Temp\ipykernel_3664\2838546326.py:2: FutureWarning: 
-    
-    Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
-    
-      sns.violinplot(data=tips, x='day', y='total_bill', palette='viridis')
-    
-
-
-    
 ![png](output_37_1.png)
-    
-
 
 - Swarm plot
-
 
 ```python
 sns.swarmplot(data=tips, x='time', y='tip', dodge=True, palette='viridis', hue='sex', s=6)
@@ -693,15 +482,9 @@ plt.title('SwarmPlot')
 plt.show()
 ```
 
-
-    
 ![png](output_39_0.png)
-    
-
 
 - StripPlot
-
-
 
 ```python
 #StripPlot
@@ -710,18 +493,9 @@ plt.title('StripPlot')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_41_1.png)
-    
-
 
 # 5) Multiple Plots using FacetGrid
-
 
 FacetGrid, a component of the seaborn library, enables the creation of multiple data subsets arranged in a grid format. Each plot within the grid represents a specific category, determined by the column names specified in the 'col' and 'row' attributes of FacetGrid().
 
@@ -729,28 +503,10 @@ The plots within the grid can encompass various plot types supported by seaborn,
 
 For example, we utilized exercise dataset
 
-
 ```python
 exercise.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -813,10 +569,7 @@ exercise.head()
 </table>
 </div>
 
-
-
 - Boxplots for pulse rate during different activities
-
 
 ```python
 # Creating subplots using FacetGrid
@@ -828,55 +581,16 @@ g.set_titles(col_template="Pulse rate for {col_name}")
 
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\axisgrid.py:718: UserWarning: Using the boxplot function without specifying `order` is likely to produce an incorrect plot.
-      warnings.warn(warning)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\categorical.py:640: FutureWarning: SeriesGroupBy.grouper is deprecated and will be removed in a future version of pandas.
-      positions = grouped.grouper.result_index.to_numpy(dtype=float)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\categorical.py:640: FutureWarning: SeriesGroupBy.grouper is deprecated and will be removed in a future version of pandas.
-      positions = grouped.grouper.result_index.to_numpy(dtype=float)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\categorical.py:640: FutureWarning: SeriesGroupBy.grouper is deprecated and will be removed in a future version of pandas.
-      positions = grouped.grouper.result_index.to_numpy(dtype=float)
-    
-
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x2135ab4b610>
-
-
-
-
-    
 ![png](output_46_2.png)
-    
-
 
 - Scatter plots for flipper length and body mass of Penguins from different islands
 
 For this plot, we utilized penguins dataset
 
-
 ```python
 penguins.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -945,9 +659,6 @@ penguins.head()
 </table>
 </div>
 
-
-
-
 ```python
 # Creating subplots using FacetGrid
 g = sns.FacetGrid(penguins, col='island', hue='sex', palette='Paired')
@@ -958,21 +669,9 @@ g.set_titles(template="Penguins of {col_name} Island")
 g.add_legend()
 ```
 
-
-
-
-    <seaborn.axisgrid.FacetGrid at 0x2135b0edb10>
-
-
-
-
-    
 ![png](output_50_1.png)
-    
-
 
 # 6) Joint Plots
-
 
 A joint plot consolidates various univariate and bivariate plots within one figure. The focal point usually features a scatter plot or a hexbin plot, illustrating the joint distribution of the two variables.
 
@@ -982,69 +681,29 @@ Let's use mpg dataset to see some examples.
 
 - Comparison of the displacement and mpg for cars
 
-
 ```python
 # Hex Plot with Histogram margins
 sns.jointplot(x="mpg", y="displacement", data=mpg, height=5, kind='hex', ratio=2, marginal_ticks=True)
 ```
 
-
-
-
-    <seaborn.axisgrid.JointGrid at 0x2135b348d90>
-
-
-
-
-    
 ![png](output_54_1.png)
-    
-
 
 - Comparison of acceleration and horsepower for cars from different countries
-
 
 ```python
 # Scatter Plot with KDE Margins
 sns.jointplot(x="horsepower", y="acceleration", data=mpg, hue="origin", height=5, ratio=2, marginal_ticks=True)
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-
-
-    <seaborn.axisgrid.JointGrid at 0x2135c721ae0>
-
-
-
-
-    
 ![png](output_56_2.png)
-    
-
 
 # 7) KDE Plots
-
 
 A KDE (Kernel Density Estimate) plot is a smoothed rendition of a histogram, showcasing the probability density function of a continuous random variable.
 
 The y-axis denotes the density or probability of observing a specific value of the variable, while the x-axis signifies the values of the variable itself.
 
 - Comparing the horsepower of cars with respect to number of cylinders
-
 
 ```python
 #Overlapping KDE Plots
@@ -1054,18 +713,9 @@ plt.title('Overlapping KDE Plot')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_60_1.png)
-    
-
 
 - Comparing the weight of cars across different countries
-
 
 ```python
 #Stacked KDE Plots
@@ -1074,21 +724,7 @@ plt.title('Stacked KDE Plot')
 plt.show()
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-    
 ![png](output_62_1.png)
-    
-
 
 # 8) Pairplots
 
@@ -1096,80 +732,27 @@ A pair plot is a visualization technique that enables exploration of relationshi
 
 Along the diagonal, histograms or density plots for each variable illustrate the distribution of values.
 
-
 - Visualisation of relationship between different features of penguins
-
 
 ```python
 #Simple Pairplot
 sns.pairplot(data=penguins, corner=True)
 ```
 
-
-
-
-    <seaborn.axisgrid.PairGrid at 0x21355a23220>
-
-
-
-
-    
 ![png](output_66_1.png)
-    
-
-
 
 ```python
 # Pairplot with hues
 sns.pairplot(data=penguins, hue='species')
 ```
 
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    c:\Users\saulo\AppData\Local\r-miniconda\lib\site-packages\seaborn\_base.py:949: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
-      data_subset = grouped_data.get_group(pd_key)
-    
-
-
-
-
-    <seaborn.axisgrid.PairGrid at 0x21355d14af0>
-
-
-
-
-    
 ![png](output_67_2.png)
-    
-
 
 # 9) Heatmaps
 
-
-Heatmaps serve as visual representations utilizing color-coded cells to exhibit the values within a matrix or data table. 
+Heatmaps serve as visual representations utilizing color-coded cells to exhibit the values within a matrix or data table.
 
 Within a heatmap, the rows and columns of the matrix represent distinct variables, while the intensity of each cell's color depicts the magnitude or value of the data point at the intersection of those variables.
-
 
 ```python
 #Selection of numeric columns from the dataset
@@ -1177,22 +760,17 @@ num_cols = list(mpg.select_dtypes(include='number'))
 fig = plt.figure(figsize=(12,7))
 
 #Correlation Heatmap
-sns.heatmap(data=mpg[num_cols].corr(), 
+sns.heatmap(data=mpg[num_cols].corr(),
             annot=True, cmap=sns.cubehelix_palette(as_cmap=True))
 plt.title('Heatmap of Correlation matrix')
 plt.show()
 ```
 
-
-    
 ![png](output_70_0.png)
-    
-
 
 # 10) Scatter Plots
 
-
-A scatterplot illustrates the correlation between two continuous variables by plotting individual data points on a graph, where one variable is depicted on the x-axis and the other on the y-axis. 
+A scatterplot illustrates the correlation between two continuous variables by plotting individual data points on a graph, where one variable is depicted on the x-axis and the other on the y-axis.
 
 The resulting plot displays multiple points scattered across the graph, hence earning the name "scatterplot."
 
@@ -1208,7 +786,6 @@ Scatter plots serve several purposes in data analysis and visualization:
 
 - Visualizing Distribution: Scatter plots provide insights into the distribution of data points along both the x-axis and y-axis, which can help in understanding the overall shape of the data distribution.
 
-
 ```python
 # Simple Scatterplot
 sns.scatterplot(data=mpg, x='weight', y='horsepower', s=150, alpha=0.7)
@@ -1216,12 +793,7 @@ plt.title('Simple Scatterplot')
 plt.show()
 ```
 
-
-    
 ![png](output_73_0.png)
-    
-
-
 
 ```python
 # Scatterplot with Hue
@@ -1231,12 +803,7 @@ plt.title('Scatterplot with Hue')
 plt.show()
 ```
 
-
-    
 ![png](output_74_0.png)
-    
-
-
 
 ```python
 # Scatterplot with Hue and Markers
@@ -1246,12 +813,7 @@ plt.title('Scatterplot with Hue and Markers')
 plt.show()
 ```
 
-
-    
 ![png](output_75_0.png)
-    
-
-
 
 ```python
 # Scatterplot with Hue & Size
@@ -1261,11 +823,7 @@ plt.title('Scatterplot with Hue & Size')
 plt.show()
 ```
 
-
-    
 ![png](output_76_0.png)
-    
-
 
 # More details can be seen in the links below:
 
@@ -1287,7 +845,7 @@ plt.show()
 
 9. [Heatmaps](https://seaborn.pydata.org/generated/seaborn.heatmap.html)
 
-10.[ Scatter Plots](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
+   10.[ Scatter Plots](https://seaborn.pydata.org/generated/seaborn.scatterplot.html)
 
 ## References
 
