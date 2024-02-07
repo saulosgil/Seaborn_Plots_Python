@@ -174,6 +174,7 @@ plt.show()
 ```
 
 ![png](output_10_1.png)
+![png](images\output_10_1.png)
 
 - Proportional Representation through Stacked Bar Charts
 
